@@ -1,14 +1,23 @@
 #include <stdio.h>
 
+#include <unistd.h>
 
 #include "core/core.h"
 
 int main(int argc, char *argv[])
 {
 
-    int version = 0;
-    version = get_version();
-    printf("get version %d\n", version);
+
+
+    NODE_Initialize();
+
+
+
+    while (1) {
+        sleep(1);
+        NODE_Work();
+    }
+
 
     printf("main end\n");
     return 0;
