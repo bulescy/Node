@@ -5,7 +5,7 @@
 NODE_Base_t temp_node;
 
 extern NODE_Base_t demo;
-NODE_Base_t *pstNodeInstance[] = {
+NODE_Base_t *_apstRegisteredNode[] = {
     &temp_node,
     &demo,
 };
@@ -13,9 +13,10 @@ NODE_Base_t *pstNodeInstance[] = {
 
 void NODE_Initialize()
 {
-    for (uint32_t i = 0; i < sizeof(pstNodeInstance)/sizeof(pstNodeInstance[0]); ++i) {
-        if (pstNodeInstance[i]->opts.init) {
-            pstNodeInstance[i]->opts.init();
+    for (uint32_t i = 0; i < sizeof(_apstRegisteredNode)/sizeof(_apstRegisteredNode[0]); ++i) {
+        NODE_Base_t *pstNode = _apstRegisteredNode[i];
+        if (pstNode->opts.Init) {
+            pstNode->opts.Init(pstNode);
         }
         printf("%s\n", __func__);
     }
@@ -24,17 +25,12 @@ void NODE_Initialize()
 
 void NODE_Work()
 {
-    for (uint32_t i = 0; i < sizeof(pstNodeInstance)/sizeof(pstNodeInstance[0]); ++i) {
-        if (pstNodeInstance[i]->opts.loop) {
-            pstNodeInstance[i]->opts.loop();
+    for (uint32_t i = 0; i < sizeof(_apstRegisteredNode)/sizeof(_apstRegisteredNode[0]); ++i) {
+        NODE_Base_t *pstNode = _apstRegisteredNode[i];
+        if (pstNode->opts.Loop) {
+            pstNode->opts.Loop(pstNode);
         }
     }
     printf("%s\n", __func__);
 }
 
-
-
-int get_version()
-{
-    return 10;
-}
