@@ -9,4 +9,5 @@
 #include <stdlib.h>
 
 
+#define NODE_PRINT(fmt, ...)    printf("[NODE]" fmt, ##__VA_ARGS__)
 #endif

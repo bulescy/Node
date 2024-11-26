@@ -59,7 +59,7 @@ typedef struct NODE_Operation_s {
 
 
 typedef struct NODE_Base_s {
-    char *name;
+    const char *name;
     NODE_Operation_t opts;
     EventCallbackFunc pfNotifyEvent;
 }NODE_Base_t;

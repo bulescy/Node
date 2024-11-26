@@ -7,49 +7,49 @@ static SupportedEvent_t _astTemplateHeaderSupportedEvent[] = {
 
 static int TemplateHeader_Init(struct NODE_Base_s *pstNode)
 {
-    printf("%s enter\n", __func__);
+    NODE_PRINT("%s enter\n", __func__);
     return 0;
 }
 
 static int TemplateHeader_Deinit(struct NODE_Base_s *pstNode)
 {
-    printf("%s enter\n", __func__);
+    NODE_PRINT("%s enter\n", __func__);
     return 0;
 }
 
 static int TemplateHeader_Open(struct NODE_Base_s *pstNode)
 {
-    printf("%s enter\n", __func__);
+    NODE_PRINT("%s enter\n", __func__);
     return 0;
 }
 
 static int TemplateHeader_Close(struct NODE_Base_s *pstNode)
 {
-    printf("%s enter\n", __func__);
+    NODE_PRINT("%s enter\n", __func__);
     return 0;
 }
 
 static int TemplateHeader_Reset(struct NODE_Base_s *pstNode)
 {
-    printf("%s enter\n", __func__);
+    NODE_PRINT("%s enter\n", __func__);
     return 0;
 }
 
 static int TemplateHeader_Loop(struct NODE_Base_s *pstNode)
 {
-    printf("%s enter\n", __func__);
+    NODE_PRINT("%s enter\n", __func__);
     return 0;
 }
 
 static int TemplateHeader_SetParameter(struct NODE_Base_s *pstNode)
 {
-    printf("%s enter\n", __func__);
+    NODE_PRINT("%s enter\n", __func__);
     return 0;
 }
 
 static int TemplateHeader_GetParameter(struct NODE_Base_s *pstNode)
 {
-    printf("%s enter\n", __func__);
+    NODE_PRINT("%s enter\n", __func__);
     return 0;
 }
 

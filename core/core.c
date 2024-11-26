@@ -1,5 +1,3 @@
-#include "core.h"
-#include "internal.h"
 #include "node/node_common.h"
 
 extern NODE_Base_t demo;
@@ -20,7 +18,7 @@ void EventInitialize()
         pstNode->opts.GetSupportedEventListSize(pstNode, &szSize);
         szAllEventSize += szSize;
     }
-    printf("szAllEventSize %zu\n", szAllEventSize);
+    NODE_PRINT("szAllEventSize %zu\n", szAllEventSize);
     pstAllEvent = (SupportedEvent_t *)malloc(szAllEventSize);
 
     SupportedEvent_t *pEventStart = pstAllEvent;
@@ -30,12 +28,12 @@ void EventInitialize()
         pstNode->opts.GetSupportedEventListSize(pstNode, &szSize);
         pstNode->opts.GetSupportedEventList(pstNode, pEventStart, szSize);
         pEventStart += szSize / sizeof(SupportedEvent_t);
-        printf("%d\n", i);
+        NODE_PRINT("%d\n", i);
     }
 
     SupportedEvent_t *pEvent = pstAllEvent;
     for (uint32_t i = 0; i < szAllEventSize / sizeof(SupportedEvent_t); ++i) {
-        printf("i %d, event: %s \n", i, pEvent->eventName);
+        NODE_PRINT("i %d, event: %s \n", i, pEvent->eventName);
         pEvent++;
     }
 }
@@ -49,9 +47,9 @@ void NODE_Initialize()
         if (pstNode->opts.Init) {
             pstNode->opts.Init(pstNode);
         }
-        printf("%s\n", __func__);
+        NODE_PRINT("%s\n", __func__);
     }
-    printf("%s\n", __func__);
+    NODE_PRINT("%s\n", __func__);
 }
 
 
@@ -68,6 +66,6 @@ void NODE_Work()
             pstNode->opts.Loop(pstNode);
         }
     }
-    printf("%s\n", __func__);
+    NODE_PRINT("%s\n", __func__);
 }
 
