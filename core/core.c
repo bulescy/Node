@@ -2,9 +2,12 @@
 
 extern NODE_Base_t demo;
 extern NODE_Base_t template_node;
+extern NODE_Base_t picture;
+
 NODE_Base_t *_apstRegisteredNode[] = {
 //    &template_node,
     &demo,
+    &picture,
 };
 
 SupportedEvent_t *pstAllEvent;

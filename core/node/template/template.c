@@ -65,7 +65,7 @@ static int TemplateHeader_GetSupportedEventListSize(struct NODE_Base_s *pstNode,
     return 0;
 }
 
-NODE_Base_t template_node = {
+NODE_Base_t TemplateHeader_node = {
     .name = "template",
     .opts.Init = TemplateHeader_Init,
     .opts.Deinit = TemplateHeader_Deinit,
